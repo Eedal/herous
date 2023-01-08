@@ -1,0 +1,20 @@
+<h1>
+  Buscando: <small>{{ value }}</small>
+</h1>
+<hr />
+
+<div class="row" *ngIf="heroes.length === 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No existen resultados con el término: {{ value }}
+    </div>
+  </div>
+</div>
+
+<div class="card-columns row row-cols-1 row-cols-md-3">
+  <app-heroe-cart
+    *ngFor="let heroe of heroes"
+    [heroe]="heroe"
+    [index]="heroe.id || 0"
+  ></app-heroe-cart>
+</div>
